@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import ContactList from "./components/ContactList";
+import { ContactList,FillUpForm } from "./components";
 
 interface ContactList {
+  id: number;
   firstName: string;
   lastName: string;
   email: string;
@@ -21,9 +22,10 @@ const App = () => {
   },[])
 
   return (
-    <div className="bg-green-500 text-center text-white w-full h-20">
-      Test Render
-      <ContactList contact={contacts} />
+    <div className="flex flex-col justify-center items-center">
+      <h1>Dashboard</h1>
+      <ContactList contacts={contacts} />
+        <FillUpForm />
    </div>
  )
   
